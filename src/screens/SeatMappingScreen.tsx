@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '../navigation/types';
 import { theme } from '../theme';
 import { useMovieDetails } from '../features/movies/api/details';
-import Svg, { Rect, Circle } from 'react-native-svg';
+import Svg, { Rect, Circle, Path } from 'react-native-svg';
 
 type RouteProp = {
   params: { movieId: number };
@@ -36,7 +36,7 @@ function SeatMapPreview({ selected }: { selected: boolean }) {
     <Svg width="140" height="110" viewBox="0 0 140 110">
       <Rect x="0" y="0" width="140" height="110" fill="transparent" />
       {/* Top curved screen arc */}
-      <path d="M 30 20 Q 70 10 110 20" stroke={baseColor} strokeWidth="1" fill="none" />
+      <Path d="M 30 20 Q 70 10 110 20" stroke={baseColor} strokeWidth="1" fill="none" />
       
       {/* Generate a 10-row miniature seat map */}
       {Array.from({ length: 10 }).map((_, rowIndex) => {
