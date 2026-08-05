@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Animated, StyleSheet, ViewStyle, StyleProp } from 'react-native';
+import { View, Animated, StyleSheet, ViewStyle, StyleProp, DimensionValue } from 'react-native';
 
 interface Props {
-  width?: number | string;
-  height?: number | string;
+  width?: DimensionValue;
+  height?: DimensionValue;
   style?: StyleProp<ViewStyle>;
   borderRadius?: number;
 }
