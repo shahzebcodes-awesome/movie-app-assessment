@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { DashboardIcon, WatchIcon, MediaLibraryIcon } from '../components/Icons';
 
@@ -19,6 +20,8 @@ const Tab = createBottomTabNavigator();
 const PlaceholderScreen = () => <View style={{ flex: 1, backgroundColor: theme.colors.background }} />;
 
 function TabNavigator() {
+  const insets = useSafeAreaInsets();
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -40,9 +43,9 @@ function TabNavigator() {
           borderTopWidth: 0, 
           borderTopLeftRadius: 24, 
           borderTopRightRadius: 24,
-          paddingBottom: 8,
-          paddingTop: 8,
-          height: 75,
+          paddingBottom: Math.max(insets.bottom, 12),
+          paddingTop: 12,
+          height: 65 + Math.max(insets.bottom, 0),
           position: 'absolute', // Floating effect over the list
         },
         tabBarLabelStyle: {
