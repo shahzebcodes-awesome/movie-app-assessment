@@ -8,7 +8,7 @@ import { RootStackParamList } from '../navigation/types';
 import { theme } from '../theme';
 
 type RouteProp = {
-  params: { movieId: number; date: string; time: string; hall: string };
+  params: { movieId: number; movieTitle: string; date: string; time: string; hall: string };
 };
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SeatSelection'>;
@@ -59,7 +59,7 @@ function generateSeats(): Seat[][] {
 export function SeatSelectionScreen() {
   const route = useRoute<RouteProp>();
   const navigation = useNavigation<NavigationProp>();
-  const { date, time, hall } = route.params;
+  const { movieTitle, date, time, hall } = route.params;
 
   // Use useMemo so we don't regenerate on every render
   const seatLayout = useMemo(() => generateSeats(), []);
@@ -97,7 +97,7 @@ export function SeatSelectionScreen() {
           <Ionicons name="chevron-back" size={24} color="#202C43" />
         </Pressable>
         <View style={styles.headerTitleContainer}>
-          <Text style={styles.movieTitle}>The King's Man</Text>
+          <Text style={styles.movieTitle}>{movieTitle}</Text>
           <Text style={styles.subtitle}>{date} | {time} {hall}</Text>
         </View>
       </View>

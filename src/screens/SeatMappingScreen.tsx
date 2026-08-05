@@ -108,6 +108,7 @@ export function SeatMappingScreen() {
     const dateObj = DATES.find(d => d.id === selectedDate);
     navigation.navigate('SeatSelection', { 
       movieId,
+      movieTitle: movie.title,
       date: dateObj?.label || '',
       time: timeObj?.time || '',
       hall: timeObj?.hall || ''

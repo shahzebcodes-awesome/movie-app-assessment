@@ -3,5 +3,5 @@ export type RootStackParamList = {
   Search: undefined;
   Details: { movieId: number };
   SeatMapping: { movieId: number };
-  SeatSelection: { movieId: number; date: string; time: string; hall: string };
+  SeatSelection: { movieId: number; movieTitle: string; date: string; time: string; hall: string };
 };
