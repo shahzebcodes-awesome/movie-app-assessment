@@ -74,7 +74,7 @@ function TabNavigator() {
               name="search" 
               size={24} 
               color={theme.colors.text} 
-              style={{ marginRight: 20 }}
+              style={{ marginRight: 40 }}
               onPress={() => navigation.navigate('Search')}
             />
           ),

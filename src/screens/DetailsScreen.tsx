@@ -66,8 +66,9 @@ export function DetailsScreen() {
     );
   }
 
-  const backdropUrl = movie.backdrop_path 
-    ? (movie.backdrop_path.startsWith('http') ? movie.backdrop_path : `https://image.tmdb.org/t/p/original${movie.backdrop_path}`)
+  const imagePath = movie.backdrop_path || movie.poster_path;
+  const backdropUrl = imagePath 
+    ? (imagePath.startsWith('http') ? imagePath : `https://image.tmdb.org/t/p/w500${imagePath}`)
     : 'https://via.placeholder.com/500x300?text=No+Backdrop';
 
   // Format date: "In Theaters December 22, 2021"
@@ -158,7 +159,9 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   backdrop: {
-    ...StyleSheet.absoluteFillObject,
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
   },
   gradient: {
     ...StyleSheet.absoluteFillObject,
