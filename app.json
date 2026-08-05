@@ -21,10 +21,16 @@
       },
       "predictiveBackGestureEnabled": false,
       "minSdkVersion": 19,
-      "targetSdkVersion": 28
+      "targetSdkVersion": 28,
+      "package": "com.shahzeb_programmer.movieappv2"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e04e8cd9-27d4-4038-8be2-62e00f95d0b4"
+      }
     }
   }
 }
