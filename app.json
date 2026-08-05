@@ -3,11 +3,14 @@
     "name": "movie-app-v2",
     "slug": "movie-app-v2",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "MinimumOSVersion": "10.0"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -16,7 +19,9 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "minSdkVersion": 19,
+      "targetSdkVersion": 28
     },
     "web": {
       "favicon": "./assets/favicon.png"
